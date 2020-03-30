@@ -1,0 +1,8 @@
+{{#each burgers}} 
+  <p>{{this.id}}</p>
+  <p>{{this.burger_name}}</p>
+  <p>{{this.devoured}}</p>
+  <button class="devourButton" data-burgerid="{{this.id}}" data-devoured="{{this.devoured}}">Devour</button>
+  <hr>
+{{/each}}
+

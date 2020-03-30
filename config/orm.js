@@ -4,7 +4,7 @@ const connection = require("./connection");
 
 const orm = {
   selectAll: function(selection, tableName, cb) {
-    let sql = "SELECT ?? FROM ?";
+    let sql = "SELECT ?? FROM ??";
     const placeholder = [selection, tableName];
     connection.query(sql, placeholder, (error, results) => {
       if (error) {

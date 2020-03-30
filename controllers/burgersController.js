@@ -11,7 +11,8 @@ router.get("/", (req, res) => {
     if (results === "error") {
       return res.status(500).end();
     }
-    res.send("hello World");
+    console.log(results);
+    res.render("index", {burgers: results});
   });
 })
 
