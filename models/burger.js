@@ -18,6 +18,10 @@ const burger = {
     orm.insert("burger", insertValues, (results) => {
       cb(results);
     })
+  },
+
+  delete: function(whereValues, cb) {
+    orm.delete("burger", whereValues, cb); // just realized i don't need the anonymous function just use cb given from controller
   }
 }
 

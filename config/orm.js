@@ -39,6 +39,18 @@ const orm = {
       }
       cb(results);
     })
+  },
+
+  delete: function(tableName, whereValues, cb) {
+    const sql = "DELETE FROM ?? WHERE ?";
+    const placeholder = [tableName, whereValues];
+    connection.query(sql, placeholder, (error, results) => {
+      if (error) {
+        console.log(error);
+        cb("error");
+      }
+      cb(results);
+    })
   }
 }
 

@@ -1,6 +1,31 @@
 const devourButtons = document.querySelectorAll(".devourButton");
 const burgerForm = document.querySelector("#burger-form");
 const burgerInput = document.querySelector("#burger-name");
+const deleteButton = document.querySelectorAll(".deleteButton"); // array of elements
+
+deleteButton.forEach(button => {
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+    deleteBurger(button);
+  })
+})
+
+
+function deleteBurger(element) {
+  const id = element.dataset.burgerid;
+
+  fetch(`/api/devour/${id}`, {
+    method: "DELETE",
+  }).then(response => {
+    return response.json();
+  }).then(data => {
+    console.log(data);
+    location.reload();
+  }).catch(err => {
+    console.log(err);
+  });
+}
+
 
 // give each button click listener 
 devourButtons.forEach((button) => {
