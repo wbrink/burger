@@ -1,8 +1,43 @@
-{{#each burgers}} 
-  <p>{{this.id}}</p>
-  <p>{{this.burger_name}}</p>
-  <p>{{this.devoured}}</p>
-  <button class="devourButton" data-burgerid="{{this.id}}" data-devoured="{{this.devoured}}">Devour</button>
-  <hr>
-{{/each}}
+<h1>Burger Eater</h1>
+<img src="/assets/img/burger.png" alt="picture of burger">
+
+
+
+
+<form id="burger-form">
+  <label for="burger-name">Burger: </label>
+  <input type="text" id="burger-name" name="burger-name" maxlength="35">
+  <input type="submit" value="Add Burger">
+</form>
+
+<div class="container">
+  
+  {{!-- column of not eaten burgers --}}
+  <div class="left">
+    <h3>Available Bugers</h3>
+    {{#if msg}}
+      <p class="msg">{{msg}}</p>
+    {{/if}}
+    {{#each notEaten}} 
+      <div class="burger burger-not-eaten">
+        <p>{{this.burger_name}}</p>
+        {{!-- <p>{{this.devoured}}</p> --}}
+        <button class="devourButton" data-burgerid="{{this.id}}" data-devoured="{{this.devoured}}">Devour</button>
+      </div>
+    {{/each}}
+  </div>
+
+  {{!-- column of devoured burgers --}}
+  <div class="right">
+    <h3>Devoured Bugers</h3>
+    {{#each devoured}} 
+      <div class="burger burger-eaten">
+        <p>{{this.burger_name}}</p>
+        {{!-- <p>{{this.devoured}}</p> --}}
+        {{!-- <button class="devourButton" data-burgerid="{{this.id}}" data-devoured="{{this.devoured}}">Devour</button> --}}
+      </div>
+    {{/each}}
+  </div>
+
+</div>
 

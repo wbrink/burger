@@ -4,6 +4,89 @@
   box-sizing: border-box;
 }
 
+html,
 body {
-  background-color: blue;
+  font-size: 16px;
+  background-color: lightblue;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+img {
+  text-align: center;
+  width: 15%;
+  margin-bottom: 20px;
+}
+
+form {
+}
+
+.burger {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.burger-not-eaten p {
+  border-radius: 5px;
+  padding: 3px;
+  width: 240px;
+  background-color: rgb(219, 73, 73);
+  min-height: 2rem;
+  margin-right: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.burger-eaten p {
+  border-radius: 5px;
+  padding: 3px;
+  height: 2rem;
+  width: 100%;
+  background-color: rgb(240, 227, 57);
+
+  word-break: break-all;
+}
+
+.devourButton {
+  font-size: 12px;
+  padding: 6px;
+}
+
+.container {
+  margin-top: 30px;
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.msg {
+  text-align: center;
+  margin-top: 20px;
+  font-style: italic;
+  color: lightcoral;
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    flex-direction: column;
+    width: 97%;
+  }
+
+  .right {
+    margin-top: 30px;
+  }
+
+  h3 {
+    text-align: center;
+  }
 }
