@@ -1,6 +1,6 @@
-# eat-da-burger
+# burger
 
-This is a burger logger that uses MySQL, Node, Express and Handlebars. It uses the Model-View-Controller pattern to separate the different logic into different files.
+This is a burger logger that uses MySQL, Node, Express handlebars. It uses the Model-View-Controller pattern to separate the different logic into different files.
 
 ## Built With
 
