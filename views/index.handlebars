@@ -1,5 +1,5 @@
-<h1>Burger Eater</h1>
-<img src="/assets/img/burger.png" alt="picture of burger">
+<h1>Eat-Da-Burger!</h1>
+<img id="logo" src="/assets/img/burger.png" alt="picture of burger">
 
 
 
@@ -14,7 +14,7 @@
   
   {{!-- column of not eaten burgers --}}
   <div class="left">
-    <h3>Available Bugers</h3>
+    <h3>Available Burgers</h3>
     {{#if msg}}
       <p class="msg">{{msg}}</p>
     {{/if}}
@@ -29,10 +29,11 @@
 
   {{!-- column of devoured burgers --}}
   <div class="right">
-    <h3>Devoured Bugers</h3>
+    <h3>Devoured Burgers</h3>
     {{#each devoured}} 
       <div class="burger burger-eaten">
         <p>{{this.burger_name}}</p>
+        <button class="deleteButton" data-burgerid="{{this.id}}"><img src="/assets/img/trash-alt.svg" alt=""></button>
         {{!-- <p>{{this.devoured}}</p> --}}
         {{!-- <button class="devourButton" data-burgerid="{{this.id}}" data-devoured="{{this.devoured}}">Devour</button> --}}
       </div>
