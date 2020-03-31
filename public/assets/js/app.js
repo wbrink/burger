@@ -3,6 +3,7 @@ const burgerForm = document.querySelector("#burger-form");
 const burgerInput = document.querySelector("#burger-name");
 const deleteButton = document.querySelectorAll(".deleteButton"); // array of elements
 
+// create event listeners for all elements with class .deleteButton
 deleteButton.forEach(button => {
   button.addEventListener("click", (e) => {
     e.preventDefault();
@@ -10,10 +11,9 @@ deleteButton.forEach(button => {
   })
 })
 
-
+// function that runs when delete button clicked
 function deleteBurger(element) {
   const id = element.dataset.burgerid;
-
   fetch(`/api/devour/${id}`, {
     method: "DELETE",
   }).then(response => {
@@ -27,7 +27,7 @@ function deleteBurger(element) {
 }
 
 
-// give each button click listener 
+// give each devour button click listener 
 devourButtons.forEach((button) => {
   button.addEventListener("click", (e) => {
     e.preventDefault();
@@ -51,6 +51,7 @@ function devourClick(elem) {
   // we set devoured to true since the burger has now been devoured
   const data = {devoured: true};
 
+  // ajax to update burger from devoured: false -> devoured:true
   fetch(`/api/devour/${id}`, {
     method: "PUT",
     headers: {'Content-Type': 'application/json'},
@@ -67,16 +68,14 @@ function devourClick(elem) {
 }
 
 
+// 
 burgerForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const burgerName = burgerInput.value;
   if (burgerName.length <= 0) return;
   
-  const data = {
-    burger_name: burgerName,
-    // devoured is false by default in database (what we want)
-  }
-  
+  const data = {burger_name: burgerName}; // devoured is false by default in database (what we want)}
+
   // insert burger into database
   fetch("/api/create", {
     method: "POST",
